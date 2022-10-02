@@ -1,0 +1,203 @@
+commit ac5c8e63263815d8b5a6d9fa7a4d5b70694a3475
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 23:27:25 2022 +1000
+
+    final
+
+commit b61b06cdd64fbc7434a7d5babab5e4a86a88f829
+Merge: e1a0f78 87c53bb
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 22:23:19 2022 +1000
+
+    system functions and structures completed
+
+commit e1a0f78d5d0cf7fd4a80fa77ebfab8e73d8e5e03
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 22:21:18 2022 +1000
+
+     System Components - functions and structures
+
+commit 87c53bb7af7ce503cd5890ba76fd1e908a855391
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 22:20:20 2022 +1000
+
+    Section 4 completed
+
+commit e24c962ac23f9e5905f5b5824011f35da3b067ba
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 21:51:56 2022 +1000
+
+    4.0 completed + 4.1/2 diagrams
+
+commit 7a36f15da5932ccf28bfda1625b56db368eaefc0
+Merge: 96ee539 b2401c1
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 21:50:28 2022 +1000
+
+    pull merge v2?
+
+commit 96ee53972b188f22b015f22fc0d9e7db5d12ecaa
+Merge: 646cfc9 88dac6d
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 21:48:21 2022 +1000
+
+    pull merge?
+
+commit b2401c12ce4b15756f71bdca8d47ef6b0720d1b0
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 21:47:08 2022 +1000
+
+    use cases 2.0
+
+commit 88dac6dfc6f04914555a1a904ce282cc7069158a
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 20:32:19 2022 +1000
+
+    flow chart and use case diagram
+
+commit ee44cf3998511a6480c3e33e6da1a2e83da0bca0
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 20:29:04 2022 +1000
+
+    Software components - functions
+
+commit 4ddfdb6969ac7816eadc66f55b1cd40114804e9b
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 18:38:28 2022 +1000
+
+    Use cases and Software design
+
+commit 8e780590210f5f32d2c42cada750ed8b070f933a
+Merge: e992a71 acea413
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 17:04:29 2022 +1000
+
+    Merge branch 'master' of https://github.com/Harris-uni/2810ICT-2022-Assignment
+
+commit e992a71301cbe2639357937d465165bce8919957
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 17:03:21 2022 +1000
+
+    software functions and UI design
+
+commit acea4137bb1b3b78b0c672907c1c54ea69f836d0
+Author: Harris-uni <101505804+Harris-uni@users.noreply.github.com>
+Date:   Sun Sep 4 16:58:55 2022 +1000
+
+    Delete ~$ftware Design Document.docx
+
+commit 646cfc91fb0fce08d422a243a7218094c9b9dd12
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 16:53:12 2022 +1000
+
+    SDD 2/4 in progress, structural design flowchart added
+
+commit c77ca8e306e8812eb6d5302cad0b9b3c2d708c4e
+Merge: a40fae5 a168b3a
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 16:13:06 2022 +1000
+
+    user requirements
+
+commit a40fae5cfd7c493fa668387601845a58e23a7d7b
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 16:08:53 2022 +1000
+
+    user requirements
+
+commit a168b3add8dc7489f1ff4fcd38c2f18b9128664c
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 15:02:50 2022 +1000
+
+    potential benefits
+
+commit 40c48e931530cc9daf3b439e6b9921c5a95d611c
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 14:22:25 2022 +1000
+
+    system overview updated
+
+commit b1946b08a6ae4d6ceb4f7235e826cc7dafb83896
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Sep 4 10:08:57 2022 +1000
+
+    SDD - System vision document in progress
+
+commit 32f0f5147d865510887345e6b4da8b0f73a8d77c
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Sep 3 20:37:18 2022 +1000
+
+    Gantt Chart Completed
+
+commit 7991537b48dc049af1fc831eb4fabf9d70b94f5f
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Sep 3 20:10:36 2022 +1000
+
+    Activity Definition Completed v2
+
+commit 9821cf4ffb3aed2a2cf4f3cde79cd1e10daa8f52
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Sep 3 20:10:08 2022 +1000
+
+    Activity Definition Completed
+
+commit b9fe18fb5825014be7b05f9e648a3e5faf767f38
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Sep 3 18:44:04 2022 +1000
+
+    wbs added to project plan
+
+commit 69d3c2f73c675eb524ba151a1bc5e66481dd2cdb
+Merge: 17463c1 0933939
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Sep 3 17:53:05 2022 +1000
+
+    Merge branch 'master' of https://github.com/Harris-uni/2810ICT-2022-Assignment
+
+commit 17463c13a21e1b61e32d08778cd5f5483a9ec472
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 2 23:11:21 2022 +1000
+
+    wbs nearing completion
+
+commit 093393944624912e9ecbc478d681fbdd9f04c43c
+Author: Harris-uni <101505804+Harris-uni@users.noreply.github.com>
+Date:   Fri Sep 2 13:58:18 2022 +1000
+
+    Delete ~$oject Plan.docx
+
+commit a8f5f9b5b181b1b80ce0d742254fbe069eb8aa09
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 2 13:56:51 2022 +1000
+
+    WBS Drawio add - in progress
+
+commit 4e3c3e9f170af7eb1689c50ce30868106baece53
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 2 11:21:26 2022 +1000
+
+    Introduction completed
+
+commit 86a56a301eaeae56d6291257fe7d888591370af0
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Sep 1 12:19:28 2022 +1000
+
+    titles and stuff
+
+commit 10aefe8045e3c7d6cf240dc18d23f2e11a722933
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Sep 1 11:52:04 2022 +1000
+
+    testings
+
+commit bf8b78f32c4fd8218b9e0358666869b773438dcc
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Sep 1 11:31:35 2022 +1000
+
+    Another commit attempt
+
+commit 7f51035530b636b4944e732ecf718bb7311ad1d8
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Wed Aug 31 13:47:01 2022 +1000
+
+    First Commit
