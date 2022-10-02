@@ -53,8 +53,14 @@ class WindowGUI(wx.Frame):
 
 
         # Alcohol Impacts box and controls
+        alcX = 85
+        alcY = 260
         wx.StaticBox(pnl, -1, 'Alcohol Impacts:', (25, 220), size=(280, 140))
 
+        wx.RadioButton(pnl, 1, 'Trends', (alcX, alcY))  # Filter Checkboxes
+        wx.RadioButton(pnl, 1, 'Types', (alcX + 100, alcY))
+        wx.RadioButton(pnl, 1, 'Other1', (alcX, alcY + 50))
+        wx.RadioButton(pnl, 1, 'Other2', (alcX + 100, alcY + 50))
 
 
         #Search Button
