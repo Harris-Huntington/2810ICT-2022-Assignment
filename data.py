@@ -90,15 +90,13 @@ def keywordByTime():
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
 
-    keyword = 'Pedestrian'
+    keyword = 'pedestrian'
     type = stats.iloc[n]["ACCIDENT_TYPE"]
 
     index = 0
     a = []
     for t in type:
-        print(n[index])
-        print(re.search(keyword, t, re.IGNORECASE))
-        if re.search(keyword, t) != None:
+        if re.search(keyword, t, re.IGNORECASE) != None:
             a.append(n[index])
         index += 1
     print(stats.iloc[a,[3,4,6]])
@@ -121,7 +119,6 @@ def weekdayAnalysis():
                     print('j')
                     dateRange.append(str((x+int(startDate[0])))+"/")
 
-    print(dateRange)
 
     dict1 = {}
     dict2 = {}
@@ -158,16 +155,6 @@ speed = 14
 #infoByTime()
 #accidentByHour()
 keywordByTime()
-
-
-
-
-
-#weekdayAnalysis()
-accidentByHour()
-
-
-accidentByHour()
 
 
 
