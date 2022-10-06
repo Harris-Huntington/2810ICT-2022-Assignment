@@ -3,50 +3,50 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import numpy as np
-<<<<<<< HEAD
 import datetime
 
-=======
 #import main
->>>>>>> 64d6bf67eda1656508efe5c018a40a58daa95021
+
 
 import math
 
-#<<<<<<< HEAD
+
 #stats = pd.read_csv('C:/Users/ericm/Documents/SoftwareTech/AssignmentPartB/data/Crash Statistics Victoria.csv', index_col=0)
-#=======
+
 #1
 def infoByTime():
+    startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
+    endDate = datetime.datetime.strptime('19/07/2013', '%d/%m/%Y')
+
+    n = []
+    for x in range(len(stats)):
+        newdata = stats.iloc[x, 3]
+        if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
+            n.append(x)
+
     #print(len(stats.loc[:, ['ACCIDENT_NO','ACCIDENT_DATE','ACCIDENT_TIME','ALCOHOLTIME']][stats["ACCIDENT_DATE"] == "1/7/2013"]))
-    print(stats.loc[:, ['ACCIDENT_NO','ACCIDENT_DATE','ACCIDENT_TIME','ALCOHOLTIME']][stats["ACCIDENT_DATE"] == "1/7/2013"])
+    print(stats.iloc[n, [number,date,time,a_type,speed]])
 #2
 def accidentByHour():
-    startDate = datetime.datetime.strptime('1/7/2013', '%d/%m/%Y')
-    endDate = datetime.datetime.strptime('5/7/2013', '%d/%m/%Y')
-    print(startDate)
+    startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
+    endDate = datetime.datetime.strptime('19/07/2013', '%d/%m/%Y')
 
-    startDate1 = '{0}/{1}/{2}'.format(startDate.month, startDate.day, startDate.year)
-    endDate1 = '{0}/{1}/{2}'.format(endDate.month, endDate.day, endDate.year)
-
-    print(startDate1, endDate1)
-
-    date = pd.date_range(start = startDate1, end = endDate1)
-    dateRange = date.strftime('%#d/%#m/%Y')
-
-    print(date)
-    print(dateRange)
     dict1 = {}
     dict2 = {}
+    n = []
+    #stats.query("(ACCIDENT_DATE >= str(startDate) or ACCIDENT_DATE <= str(endDate))")
 
-    for x in range(len(stats[(stats["ACCIDENT_DATE"] == "1/7/2013") & (stats["ACCIDENT_DATE"] == "2/7/2013")].iloc[:, 4])):
-        print(stats[(stats["ACCIDENT_DATE"] == "1/7/2013") & (stats["ACCIDENT_DATE"] == "2/7/2013")].iloc[:, 4])
-        if int(str(stats[(stats["ACCIDENT_DATE"] == "1/7/2013") & (stats["ACCIDENT_DATE"] == "2/7/2013")].iloc[x, 4][0:2])) in dict1:
-            dict1[int(str(stats[(stats["ACCIDENT_DATE"] == "1/7/2013") & (stats["ACCIDENT_DATE"] == "2/7/2013")].iloc[x, 4][0:2]))] += 1
+    for x in range(len(stats)):
+        newdata = stats.iloc[x, 3]
+        if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
+            n.append(x)
+
+    for y in range(len(stats.iloc[n,:])):
+        if stats.iloc[n[y],4][0:2] in dict1:
+            dict1[stats.iloc[n[y],4][0:2]] += 1
         else:
-            dict1.update({int(str(stats[(stats["ACCIDENT_DATE"] == "1/7/2013") & (stats["ACCIDENT_DATE"] == "2/7/2013")].iloc[x, 4][0:2])): 1})
+            dict1.update({stats.iloc[n[y],4][0:2]: 1})
 
-
-    print("1/7/2013" > "1/8/2013")
 
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
@@ -64,10 +64,19 @@ def accidentByHour():
 
 #3
 def keywordByTime():
+    startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
+    endDate = datetime.datetime.strptime('19/07/2013', '%d/%m/%Y')
+
+    n = []
+    for x in range(len(stats)):
+        newdata = stats.iloc[x, 3]
+        if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
+            n.append(x)
+
     date = ''
     keyword = 'collision'
     keyword = keyword.capitalize()
-    type = stats[stats["ACCIDENT_DATE"] == date]["ACCIDENT_TYPE"]
+    type = stats.iloc[n]["ACCIDENT_TYPE"]
 
     index = 0
     a = []
@@ -76,7 +85,7 @@ def keywordByTime():
         if re.search(keyword, t) != None:
             a.append(index)
         index += 1
-    print(stats[stats["ACCIDENT_DATE"] == date].iloc[a,[0,3,4,6]])
+    print(stats.iloc[a,[3,4,6]])
 
 #4
 def alcoholAnalysis():
@@ -109,10 +118,6 @@ def weekdayAnalysis():
         else:
             dict1.update({str(stats[stats["ACCIDENT_DATE"] == date[1]].iloc[x, 4]): 1})
 
-
-    xpoints = np.array([min(dict1, key=dict1.get),max(dict1, key=dict1.get)])
-    ypoints = np.array([dict1[xpoints[0]], dict1[xpoints[1]]])
-
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
         dict2.update({sort[i][0]:sort[i][1]})
@@ -125,20 +130,23 @@ def weekdayAnalysis():
     #plt.show()
 
 
-#>>>>>>> 81a81bd90ebdb3f6e94202d9947127371a94f460
+
 stats = pd.read_csv('../data/Crash Statistics Victoria.csv', index_col=0)
+number = 0
+date = 3
+time = 4
+a_type = 6
+speed = 14
+
+
+#infoByTime()
+#accidentByHour()
+keywordByTime()
 
 
 
-<<<<<<< HEAD
-#weekdayAnalysis()
-accidentByHour()
-=======
-
-accidentByHour()
 
 
->>>>>>> 64d6bf67eda1656508efe5c018a40a58daa95021
 
 #Keyword by timeframe
 
