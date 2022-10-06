@@ -3,11 +3,18 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import numpy as np
+<<<<<<< HEAD
 import datetime
 
+=======
+#import main
+>>>>>>> 64d6bf67eda1656508efe5c018a40a58daa95021
 
 import math
 
+#<<<<<<< HEAD
+#stats = pd.read_csv('C:/Users/ericm/Documents/SoftwareTech/AssignmentPartB/data/Crash Statistics Victoria.csv', index_col=0)
+#=======
 #1
 def infoByTime():
     #print(len(stats.loc[:, ['ACCIDENT_NO','ACCIDENT_DATE','ACCIDENT_TIME','ALCOHOLTIME']][stats["ACCIDENT_DATE"] == "1/7/2013"]))
@@ -118,12 +125,20 @@ def weekdayAnalysis():
     #plt.show()
 
 
+#>>>>>>> 81a81bd90ebdb3f6e94202d9947127371a94f460
 stats = pd.read_csv('../data/Crash Statistics Victoria.csv', index_col=0)
 
 
 
+<<<<<<< HEAD
 #weekdayAnalysis()
 accidentByHour()
+=======
+
+accidentByHour()
+
+
+>>>>>>> 64d6bf67eda1656508efe5c018a40a58daa95021
 
 #Keyword by timeframe
 
