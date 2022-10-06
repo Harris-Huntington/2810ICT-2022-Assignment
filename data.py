@@ -73,17 +73,16 @@ def keywordByTime():
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
 
-    date = ''
-    keyword = 'collision'
-    keyword = keyword.capitalize()
+    keyword = 'Pedestrian'
     type = stats.iloc[n]["ACCIDENT_TYPE"]
 
     index = 0
     a = []
     for t in type:
-        print(re.search(keyword, t))
+        print(n[index])
+        print(re.search(keyword, t, re.IGNORECASE))
         if re.search(keyword, t) != None:
-            a.append(index)
+            a.append(n[index])
         index += 1
     print(stats.iloc[a,[3,4,6]])
 
