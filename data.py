@@ -3,12 +3,11 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
-
-
-
+import wx
+import wx.grid
 
 #1
-def infoByTime(sDate, eDate):
+def infoByTime(sDate, eDate, df):
     startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
     endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
 
@@ -18,7 +17,10 @@ def infoByTime(sDate, eDate):
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
 
-    print(stats.iloc[n, [number,date,time,a_type,speed]])
+        df = stats.iloc[n, [number,date,time,a_type,speed]]
+
+
+
 #2
 
 def accidentByHour(sDate, eDate):
@@ -46,7 +48,7 @@ def accidentByHour(sDate, eDate):
 
     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
     plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Hour (24hr time)")
+    plt.xlabel("Hour (24hr time)",fontsize=4)
     plt.ylabel("Number of accidents")
 
     plt.show()
@@ -75,8 +77,34 @@ def keywordByTime(sDate, eDate, key):
     print(stats.iloc[a,[3,4,6]])
 
 #4
-def alcoholAnalysis(sDate, eDate):
-    date = "3/7/2013"
+def alcoholType():
+    dict1 = {}
+    dict2 = {}
+
+    n = []
+    for x in range(len(stats)):
+        if str(stats.iloc[x,5]) == 'Yes':
+            n.append(x)
+    print(n[0])
+
+    for y in range(len(n)):
+        print(y)
+        if stats.iloc[n[y], 6] in dict1:
+            dict1[stats.iloc[n[y], 6]] += 1
+        else:
+            dict1.update({stats.iloc[n[y], 6]: 1})
+
+    sort = sorted(dict1.items())
+    for i in range(len(dict1)):
+        dict2.update({sort[i][0]: sort[i][1]})
+    plt.rcParams['font.size'] = '5'
+    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    plt.xticks(range(len(dict2)), list(dict2.keys()))
+    plt.xlabel("Type of Accident",)
+    plt.ylabel("Number of Accidents")
+
+    plt.show()
+
 
 #5
 def weekdayAnalysis(sDate, eDate):
@@ -128,4 +156,5 @@ speed = 14
 #accidentByHour()
 #keywordByTime()
 #weekdayAnalysis()
+alcoholType()
 

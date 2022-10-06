@@ -5,6 +5,7 @@ import wx.grid as gridlib
 import data
 
 
+
 class WindowGUI(wx.Frame):
     def __init__(self, parent, title):
         wx.Frame.__init__(self, parent, title=title, size=(854,480))
@@ -23,26 +24,29 @@ class WindowGUI(wx.Frame):
 
         #First row within each col. Rows follow ABC... formating, Cols 123... etc
         col1A = wx.BoxSizer(wx.HORIZONTAL)
+        self.datesR = wx.RadioButton(pnl, 1, 'Selected Dates', style=wx.RB_GROUP)
+        self.alcoholR = wx.RadioButton(pnl, 1, 'Alcohol Impacts')
+        col1A.Add(self.datesR, 1)  # Main selection buttons
+        col1A.Add(self.alcoholR, 1)
+        col1.Add(col1A, 1, wx.ALIGN_CENTER, border=30)
+
         col1B = wx.BoxSizer(wx.HORIZONTAL)
         col2A = wx.BoxSizer(wx.HORIZONTAL)
 
 
-        col1.Add(col1A, 1, wx.ALIGN_CENTER, border=30 ) # Adding rows to main cols
+         # Adding rows to main cols
         col1.Add(col1B, 1, wx.ALIGN_CENTER, border=400)
         col2.Add(col2A, 1, wx.ALIGN_CENTER)
-
-        col1A.Add(wx.RadioButton(pnl, 1, 'Selected Dates', style=wx.RB_GROUP), 1) #Main selection buttons
-        col1A.Add(wx.RadioButton(pnl, 1, 'Alcohol Impacts'), 1)
 
         col2A.Add(wx.StaticText(pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
 
-        gridCol = wx.BoxSizer(wx.HORIZONTAL)
+        #gridCol = wx.BoxSizer(wx.HORIZONTAL)
 
-        myGrid = gridlib.Grid(pnl)
-        myGrid.CreateGrid(12, 8)
-        gridCol.Add(myGrid, 1, wx.EXPAND)
-        rows.Add(gridCol, 1, wx.ALIGN_LEFT)
+        #myGrid = gridlib.Grid(pnl)
+        #myGrid.CreateGrid(12, 30)
+        #gridCol.Add(myGrid, 1, wx.EXPAND)
+        #rows.Add(gridCol, 1, wx.ALIGN_LEFT)
 
 
 
@@ -66,10 +70,6 @@ class WindowGUI(wx.Frame):
 
         self.keyword = wx.TextCtrl(pnl, pos=(120, 160), size=(140, 20))  # Keyword Search
         self.keyword.SetHint('Keyword')
-
-
-
-
 
         # Alcohol Impacts box and controls
         alcX = 85
@@ -96,17 +96,20 @@ class WindowGUI(wx.Frame):
 
         pnl.SetSizer(rows)
         self.Show(True)
-        self.Maximize(True)
 
     def search(self, event):
         if self.allR.GetValue() == True:
-            data.infoByTime(self.startDate.Value, self.endDate.Value)
+            return data.infoByTime(self.startDate.Value, self.endDate.Value)
+
+
         elif self.hourlyR.GetValue() == True:
             data.accidentByHour(self.startDate.Value, self.endDate.Value)
         elif self.typeR.GetValue() == True:
             data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
         print(self.startDate.Value, self.endDate.Value)
+
+
 
 
 
