@@ -37,9 +37,9 @@ class WindowGUI(wx.Frame):
         wx.StaticBox(pnl, -1, 'Select Dates:', (25,40), size=(280,160))
 
         startDate = wx.TextCtrl(pnl, pos=(60, 70), size=(70, 20))  # Keyword Search
-        startDate.SetHint('xx/xx/xxxx') #Set this to min date
+        startDate.SetHint('1/7/2013') #Oldest Data
         endDate = wx.TextCtrl(pnl, pos=(200, 70), size=(70, 20))  # Keyword Search
-        endDate.SetHint('xx/xx/xxxx') #Set this to max date
+        endDate.SetHint('21/3/2019') #Newest Date
         wx.StaticText(pnl, 1, label="--->", pos=(150,72))
 
         wx.RadioButton(pnl, 1, 'All', (filterx,filtery)) #Filter Checkboxes
@@ -64,7 +64,6 @@ class WindowGUI(wx.Frame):
 
 
         #Search Button
-        # col1B.Add(wx.Button(pnl, 1, 'Search', (30,30)), 1)
         wx.Button(pnl, 1, 'Search', (125,380))
 
         pnl.SetSizerAndFit(splitCol)
