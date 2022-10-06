@@ -3,7 +3,7 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import numpy as np
-import main
+#import main
 
 import math
 
@@ -97,7 +97,7 @@ stats = pd.read_csv('../data/Crash Statistics Victoria.csv', index_col=0)
 
 
 
-weekdayAnalysis()
+accidentByHour()
 
 
 
