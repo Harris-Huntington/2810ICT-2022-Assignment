@@ -3,7 +3,14 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import numpy as np
+
+
 import datetime
+
+
+
+import datetime
+
 
 #import main
 
@@ -27,9 +34,19 @@ def infoByTime():
     #print(len(stats.loc[:, ['ACCIDENT_NO','ACCIDENT_DATE','ACCIDENT_TIME','ALCOHOLTIME']][stats["ACCIDENT_DATE"] == "1/7/2013"]))
     print(stats.iloc[n, [number,date,time,a_type,speed]])
 #2
+
+def accidentByHour(sDate, eDate):
+    startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
+    endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
+
+    # startDate = datetime.datetime.strptime('1/7/2013', '%d/%m/%Y')
+    # endDate = datetime.datetime.strptime('5/7/2013', '%d/%m/%Y')
+    print(startDate)
+
 def accidentByHour():
     startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
     endDate = datetime.datetime.strptime('19/07/2013', '%d/%m/%Y')
+
 
     dict1 = {}
     dict2 = {}
@@ -143,6 +160,14 @@ speed = 14
 keywordByTime()
 
 
+
+
+
+#weekdayAnalysis()
+accidentByHour()
+
+
+accidentByHour()
 
 
 
