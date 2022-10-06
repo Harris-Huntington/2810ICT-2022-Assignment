@@ -9,8 +9,8 @@ class dataTest(unittest.TestCase):
     # def test_infoByTime(self):
     #     self.assertIn("3", data.infoByTime()) # Test info by time loads data
 
-    def test_accidentByHour(self):
-        self.assertTrue(data.accidentByHour())
+    def test_accidentByHourStartDate(self):
+        self.assertGreater(data.accidentByHour(sDate), )
 
 
 if __name__ == '__main__':
