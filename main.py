@@ -20,7 +20,7 @@ class WindowGUI(wx.Frame):
         col2 = wx.BoxSizer(wx.VERTICAL) #Right hand col - Title/Data
 
         splitCol.Add(col1, 3, wx.ALIGN_TOP) #Adding main cols
-        splitCol.Add(col2, 5, wx.ALIGN_TOP)
+        splitCol.Add(col2, 7, wx.ALIGN_TOP)
 
         #First row within each col. Rows follow ABC... formating, Cols 123... etc
         col1A = wx.BoxSizer(wx.HORIZONTAL)

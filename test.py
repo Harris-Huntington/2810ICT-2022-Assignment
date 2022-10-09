@@ -3,6 +3,9 @@ import unittest
 import data
 
 class dataTest(unittest.TestCase):
+    # def test_import(self):
+    #     self.assertTrue(data.stats.all) # Test file is correct
+
     def test_import(self):
         self.assertTrue(data.stats.all) # Test a file has been imported correctly
 
@@ -10,7 +13,7 @@ class dataTest(unittest.TestCase):
     #     self.assertIn("3", data.infoByTime()) # Test info by time loads data
 
     def test_accidentByHourStartDate(self):
-        self.assertGreater(data.accidentByHour(sDate), )
+        self.assertGreater(data.accidentByHour(), )
 
 
 if __name__ == '__main__':
