@@ -5,9 +5,10 @@ import numpy as np
 import datetime
 import wx
 import wx.grid
+import grid
 
 #1
-def infoByTime(sDate, eDate, df):
+def infoByTime(sDate, eDate):
     startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
     endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
 
@@ -16,8 +17,7 @@ def infoByTime(sDate, eDate, df):
         newdata = stats.iloc[x, 3]
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
-
-        df = stats.iloc[n, [number,date,time,a_type,speed]]
+    grid.main(stats.iloc[n, [number,date,time,a_type,speed]])
 
 
 
@@ -74,7 +74,7 @@ def keywordByTime(sDate, eDate, key):
         if re.search(keyword, t, re.IGNORECASE) != None:
             a.append(n[index])
         index += 1
-    print(stats.iloc[a,[3,4,6]])
+    grid.main(stats.iloc[a,[0,3,4,6]])
 
 #4
 def alcoholType():
@@ -156,5 +156,5 @@ speed = 14
 #accidentByHour()
 #keywordByTime()
 #weekdayAnalysis()
-alcoholType()
+#alcoholType()
 

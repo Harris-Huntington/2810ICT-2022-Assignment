@@ -12,7 +12,7 @@ class WindowGUI(wx.Frame):
         self.initialise()
 
     def initialise(self):
-        pnl = wx.Panel(self)
+        self.pnl = wx.Panel(self)
         rows = wx.BoxSizer(wx.VERTICAL)
         splitCol = wx.BoxSizer(wx.HORIZONTAL) #Splitting the page
 
@@ -24,8 +24,8 @@ class WindowGUI(wx.Frame):
 
         #First row within each col. Rows follow ABC... formating, Cols 123... etc
         col1A = wx.BoxSizer(wx.HORIZONTAL)
-        self.datesR = wx.RadioButton(pnl, 1, 'Selected Dates', style=wx.RB_GROUP)
-        self.alcoholR = wx.RadioButton(pnl, 1, 'Alcohol Impacts')
+        self.datesR = wx.RadioButton(self.pnl, 1, 'Selected Dates', style=wx.RB_GROUP)
+        self.alcoholR = wx.RadioButton(self.pnl, 1, 'Alcohol Impacts')
         col1A.Add(self.datesR, 1)  # Main selection buttons
         col1A.Add(self.alcoholR, 1)
         col1.Add(col1A, 1, wx.ALIGN_CENTER, border=30)
@@ -38,68 +38,68 @@ class WindowGUI(wx.Frame):
         col1.Add(col1B, 1, wx.ALIGN_CENTER, border=400)
         col2.Add(col2A, 1, wx.ALIGN_CENTER)
 
-        col2A.Add(wx.StaticText(pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
+        col2A.Add(wx.StaticText(self.pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
 
-        #gridCol = wx.BoxSizer(wx.HORIZONTAL)
-
-        #myGrid = gridlib.Grid(pnl)
+        self.infoCol = wx.BoxSizer(wx.HORIZONTAL)
+        #myGrid = gridlib.Grid(self)
         #myGrid.CreateGrid(12, 30)
-        #gridCol.Add(myGrid, 1, wx.EXPAND)
-        #rows.Add(gridCol, 1, wx.ALIGN_LEFT)
+        #self.infoCol.Add(myGrid, 1, wx.EXPAND)
+        rows.Add(self.infoCol, 1, wx.ALIGN_LEFT)
 
 
 
         #Selected dates box and controls
         filtery = 110
         filterx = 70
-        wx.StaticBox(pnl, -1, 'Select Dates:', (25,40), size=(280,160))
+        wx.StaticBox(self.pnl, -1, 'Select Dates:', (25,40), size=(280,160))
 
 
-        self.startDate = wx.TextCtrl(pnl, pos=(60, 70), size=(70, 20))  # Keyword Search
+        self.startDate = wx.TextCtrl(self.pnl, pos=(60, 70), size=(70, 20))  # Keyword Search
         self.startDate.SetHint('1/07/2013') #Set this to min date
-        self.endDate = wx.TextCtrl(pnl, pos=(200, 70), size=(70, 20))  # Keyword Search
+        self.endDate = wx.TextCtrl(self.pnl, pos=(200, 70), size=(70, 20))  # Keyword Search
         self.endDate.SetHint('21/03/2019') #Set this to max date
 
-        wx.StaticText(pnl, 1, label="--->", pos=(150,72))
+        wx.StaticText(self.pnl, 1, label="--->", pos=(150,72))
 
-        self.allR = wx.RadioButton(pnl, 1, 'All', (filterx,filtery),style=wx.RB_GROUP) #Filter Checkboxes
-        self.hourlyR = wx.RadioButton(pnl, 1, 'Hourly', (2*filterx - 10, filtery))
-        self.typeR = wx.RadioButton(pnl, 1, 'Type', (70, 160))
-        self.otherR = wx.RadioButton(pnl, 1, 'Other', (3*filterx, filtery))
+        self.allR = wx.RadioButton(self.pnl, 1, 'All', (filterx,filtery),style=wx.RB_GROUP) #Filter Checkboxes
+        self.hourlyR = wx.RadioButton(self.pnl, 1, 'Hourly', (2*filterx - 10, filtery))
+        self.typeR = wx.RadioButton(self.pnl, 1, 'Type', (70, 160))
+        self.otherR = wx.RadioButton(self.pnl, 1, 'Other', (3*filterx, filtery))
 
-        self.keyword = wx.TextCtrl(pnl, pos=(120, 160), size=(140, 20))  # Keyword Search
+        self.keyword = wx.TextCtrl(self.pnl, pos=(120, 160), size=(140, 20))  # Keyword Search
         self.keyword.SetHint('Keyword')
 
         # Alcohol Impacts box and controls
         alcX = 85
         alcY = 260
-        wx.StaticBox(pnl, -1, 'Alcohol Impacts:', (25, 220), size=(280, 140))
+        wx.StaticBox(self.pnl, -1, 'Alcohol Impacts:', (25, 220), size=(280, 140))
 
         # wx.RadioButton(pnl, 1, 'Trends', (alcX, alcY))  # Filter Checkboxes
         # wx.RadioButton(pnl, 1, 'Types', (alcX + 100, alcY))
         # wx.RadioButton(pnl, 1, 'Other1', (alcX, alcY + 50))
         # wx.RadioButton(pnl, 1, 'Other2', (alcX + 100, alcY + 50))
 
-        wx.RadioButton(pnl, 1, 'Trends', (alcX, alcY), style=wx.RB_GROUP)  # Filter Checkboxes
-        wx.RadioButton(pnl, 1, 'Types', (alcX + 100, alcY))
-        wx.RadioButton(pnl, 1, 'Other1', (alcX, alcY + 50))
-        wx.RadioButton(pnl, 1, 'Other2', (alcX + 100, alcY + 50))
+        wx.RadioButton(self.pnl, 1, 'Trends', (alcX, alcY), style=wx.RB_GROUP)  # Filter Checkboxes
+        wx.RadioButton(self.pnl, 1, 'Types', (alcX + 100, alcY))
+        wx.RadioButton(self.pnl, 1, 'Other1', (alcX, alcY + 50))
+        wx.RadioButton(self.pnl, 1, 'Other2', (alcX + 100, alcY + 50))
 
 
 
 
         #Search Button
-        searchBtn = wx.Button(pnl, 1, 'Search', (125,380))
+        searchBtn = wx.Button(self.pnl, 1, 'Search', (125,380))
         self.Bind(wx.EVT_BUTTON,self.search, searchBtn)
 
 
-        pnl.SetSizer(rows)
+        self.pnl.SetSizer(rows)
         self.Show(True)
 
     def search(self, event):
         if self.allR.GetValue() == True:
-            return data.infoByTime(self.startDate.Value, self.endDate.Value)
+            data.infoByTime(self.startDate.Value, self.endDate.Value)
+
 
 
         elif self.hourlyR.GetValue() == True:
