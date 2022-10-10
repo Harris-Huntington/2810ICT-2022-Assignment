@@ -57,9 +57,9 @@ class WindowGUI(wx.Frame):
 
 
         self.startDate = wx.TextCtrl(pnl, pos=(60, 70), size=(70, 20))  # Keyword Search
-        self.startDate.SetHint('xx/xx/xxxx') #Set this to min date
+        self.startDate.SetHint('1/07/2013') #Set this to min date
         self.endDate = wx.TextCtrl(pnl, pos=(200, 70), size=(70, 20))  # Keyword Search
-        self.endDate.SetHint('xx/xx/xxxx') #Set this to max date
+        self.endDate.SetHint('21/03/2019') #Set this to max date
 
         wx.StaticText(pnl, 1, label="--->", pos=(150,72))
 
