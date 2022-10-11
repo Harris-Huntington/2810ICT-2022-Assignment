@@ -85,8 +85,6 @@ def main(input):
     import numpy as np
     df = input
 
-    #df = pd.DataFrame({'a' : np.random.randn(10), 'b' : np.random.randn(10), 'c' : np.random.randn(10)})
-    #print(df)
     display(df)
 
 if __name__ == '__main__':
