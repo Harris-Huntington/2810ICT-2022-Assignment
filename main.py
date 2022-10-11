@@ -4,12 +4,20 @@ import wx.grid as gridlib
 # WX Visuals #
 import data
 
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+
+import numpy
+
+import datetime
 
 
 class WindowGUI(wx.Frame):
     def __init__(self, parent, title):
         wx.Frame.__init__(self, parent, title=title, size=(854,480))
         self.initialise()
+        self.p2 = MatPlotPanel(self)
 
     def initialise(self):
         self.pnl = wx.Panel(self)
@@ -96,7 +104,7 @@ class WindowGUI(wx.Frame):
 
 
         #Col 2 - Data Display
-        col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
+        # col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
         #col2B.Add(self.search(self))
 
 
@@ -109,7 +117,55 @@ class WindowGUI(wx.Frame):
 
             #view graph on how many accidents per hour
             elif self.hourlyR.GetValue() == True:
-                data.accidentByHour(self.startDate.Value, self.endDate.Value)
+                # data.accidentByHour(self.startDate.Value, self.endDate.Value)
+                sDate = self.startDate.Value
+                eDate = self.endDate.Value
+
+                startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
+                endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
+
+                dict1 = {}
+                dict2 = {}
+                n = []
+
+                for x in range(len(data.stats)):
+                    newdata = data.stats.iloc[x, 3]
+                    if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
+                        n.append(x)
+
+                for y in range(len(data.stats.iloc[n, :])):
+                    if data.stats.iloc[n[y], 4][0:2] in dict1:
+                        dict1[data.stats.iloc[n[y], 4][0:2]] += 1
+                    else:
+                        dict1.update({data.stats.iloc[n[y], 4][0:2]: 1})
+
+                sort = sorted(dict1.items())
+                for i in range(len(dict1)):
+                    dict2.update({sort[i][0]: sort[i][1]})
+
+                plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+                plt.xticks(range(len(dict2)), list(dict2.keys()))
+                plt.xlabel("Hour (24hr time)")
+                plt.ylabel("Number of accidents")
+
+                plt.show()
+
+                # self.figure = Figure()
+                # self.axes = self.figure.add_subplot(111)
+                # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+                # plt.xticks(range(len(dict2)), list(dict2.keys()))
+                # plt.xlabel("Hour (24hr time)")
+                # plt.ylabel("Number of accidents")
+                # self.canvas = FigureCanvas(self, -1, self.figure)
+
+                self.figure = Figure()
+                self.axes = self.figure.add_subplot(111)
+                t = numpy.arange(0.0, 10, 1.0)
+                s = [0, 1, 0, 1, 0, 2, 1, 2, 1, 0]
+                self.y_max = 1.0
+                self.axes.plot(t, s)
+                self.canvas = FigureCanvas(self, -1, self.figure)
+
 
             #Keyword search
             elif self.typeR.GetValue() == True:
@@ -134,6 +190,27 @@ class WindowGUI(wx.Frame):
 
 
         print(self.startDate.Value, self.endDate.Value)
+
+
+class MatPlotPanel(wx.Panel):
+        def __init__(self, parent):
+            wx.Panel.__init__(self, parent, -1, size=(450,350), pos=(350,50))
+
+            # self.figure = Figure()
+            # self.axes = self.figure.add_subplot(111)
+            # t = numpy.arange(0.0, 10, 1.0)
+            # s = [0, 1, 0, 1, 0, 2, 1, 2, 1, 0]
+            # self.y_max = 1.0
+            # self.axes.plot(t, s)
+            # self.canvas = FigureCanvas(self, -1, self.figure)
+
+            # self.figure = Figure()
+            # self.axes = self.figure.add_subplot(111)
+            # self.plt.bar(range(len(data.dict2)), list(data.dict2.values()), align='center')
+            # self.plt.xticks(range(len(data.dict2)), list(data.dict2.keys()))
+            # self.plt.xlabel("Hour (24hr time)")
+            # self.plt.ylabel("Number of accidents")
+            # self.canvas = FigureCanvas(self, -1, self.figure)
 
 
 
