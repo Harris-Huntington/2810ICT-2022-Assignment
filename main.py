@@ -19,6 +19,8 @@ class WindowGUI(wx.Frame):
         self.initialise()
         self.p2 = MatPlotPanel(self)
 
+
+
     def initialise(self):
         self.pnl = wx.Panel(self)
         rows = wx.BoxSizer(wx.VERTICAL)
@@ -46,7 +48,7 @@ class WindowGUI(wx.Frame):
          # Adding rows to main cols
         col1.Add(col1B, 1, wx.ALIGN_CENTER, border=400)
         col2.Add(col2A, 1, wx.ALIGN_CENTER)
-        col2.Add(col2B, 1, wx.ALIGN_CENTER)
+        col2.Add(col2B, 1, wx.ALIGN_CENTER, border=400)
 
         col2A.Add(wx.StaticText(self.pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
@@ -158,13 +160,24 @@ class WindowGUI(wx.Frame):
                 # plt.ylabel("Number of accidents")
                 # self.canvas = FigureCanvas(self, -1, self.figure)
 
-                self.figure = Figure()
-                self.axes = self.figure.add_subplot(111)
-                t = numpy.arange(0.0, 10, 1.0)
-                s = [0, 1, 0, 1, 0, 2, 1, 2, 1, 0]
-                self.y_max = 1.0
-                self.axes.plot(t, s)
-                self.canvas = FigureCanvas(self, -1, self.figure)
+                # self.figure = Figure()
+                # self.axes = self.figure.add_subplot(111)
+                # self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+                # self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+                # self.axes.set_xlabel("Hour (24hr time)")
+                # self.axes.set_ylabel("Number of accidents")
+                # self.canvas = FigureCanvas(self, -1, self.figure)
+
+                MatPlotPanel().drawHourly(self.dict2)
+
+
+                # self.figure = Figure()
+                # self.axes = self.figure.add_subplot(111)
+                # t = numpy.arange(0.0, 10, 1.0)
+                # s = [0, 1, 0, 1, 0, 2, 1, 2, 1, 0]
+                # self.y_max = 1.0
+                # self.axes.plot(t, s)
+                # self.canvas = FigureCanvas(self, -1, self.figure)
 
 
             #Keyword search
@@ -192,9 +205,11 @@ class WindowGUI(wx.Frame):
         print(self.startDate.Value, self.endDate.Value)
 
 
+
+
 class MatPlotPanel(wx.Panel):
         def __init__(self, parent):
-            wx.Panel.__init__(self, parent, -1, size=(450,350), pos=(350,50))
+             wx.Panel.__init__(self, parent, -1, size=(450,350), pos=(350,50))
 
             # self.figure = Figure()
             # self.axes = self.figure.add_subplot(111)
@@ -211,6 +226,17 @@ class MatPlotPanel(wx.Panel):
             # self.plt.xlabel("Hour (24hr time)")
             # self.plt.ylabel("Number of accidents")
             # self.canvas = FigureCanvas(self, -1, self.figure)
+
+        def drawHourly(self, dict2):
+            print(dict2)
+            self.figure = Figure()
+            self.axes = self.figure.add_subplot(111)
+            self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+            self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+            self.axes.set_xlabel("Hour (24hr time)")
+            self.axes.set_ylabel("Number of accidents")
+            self.canvas = FigureCanvas(self, -1, self.figure)
+
 
 
 
