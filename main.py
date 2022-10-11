@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import wx
 import wx.grid as gridlib
 
@@ -58,6 +59,7 @@ class WindowGUI(wx.Frame):
 
 
 
+
         #Selected dates box and controls
         filtery = 110
         filterx = 70
@@ -106,7 +108,7 @@ class WindowGUI(wx.Frame):
 
 
         #Col 2 - Data Display
-        # col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
+        #col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
         #col2B.Add(self.search(self))
 
 
@@ -184,25 +186,30 @@ class WindowGUI(wx.Frame):
             elif self.typeR.GetValue() == True:
                 data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
+            #Weekday analysis
             elif self.weekR.GetValue() == True:
                 data.weekdayAnalysis(self.startDate.Value, self.endDate.Value)
 
         elif self.alcoholR.GetValue() == True:
+            #Weekday analysis of alcohol
             if self.trends.GetValue() == True:
                 data.alcoholWeekday()
+
+            #no of crashes affected by alcohol by type
             elif self.aTypes.GetValue() == True:
                 data.alcoholType()
+
+            #yearly alcohol analysis
             elif self.aYearly.GetValue() == True:
                 data.alcoholYearly()
 
         elif self.hourlyR.GetValue() == True:
             data.accidentByHour(self.startDate.Value, self.endDate.Value)
+
          #   self.pnl.data.accidentByHour(self.startDate.Value, self.endDate.Value)
         elif self.typeR.GetValue() == True:
             data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
-
-        print(self.startDate.Value, self.endDate.Value)
 
 
 

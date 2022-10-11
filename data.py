@@ -4,10 +4,14 @@ import matplotlib.pyplot as plt
 import datetime
 import grid
 import wx
+
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
 
 import numpy
+
+#import jupyter
+
 
 #1
 def infoByTime(sDate, eDate):
@@ -19,7 +23,11 @@ def infoByTime(sDate, eDate):
         newdata = stats.iloc[x, 3]
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
-    grid.main(stats.iloc[n])
+
+    if len(stats.iloc[n]) == 0:
+        wx.MessageBox("No Data Found","Error")
+    else:
+        grid.main(stats.iloc[n])
 
 
 
@@ -61,6 +69,7 @@ def infoByTime(sDate, eDate):
 #
 #     return dict1, dict2
 
+
     # class MatPlotPanel(wx.Panel):
     #     def __init__(self, parent):
     #         wx.Panel.__init__(self, parent, -1, size=(450, 350), pos=(350, 50))
@@ -72,6 +81,36 @@ def infoByTime(sDate, eDate):
     #         self.y_max = 1.0
     #         self.axes.plot(t, s)
     #         self.canvas = FigureCanvas(self, -1, self.figure)
+
+    dict1 = {}
+    dict2 = {}
+    n = []
+
+    for x in range(len(stats)):
+        newdata = stats.iloc[x, 3]
+        if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
+            n.append(x)
+
+    for y in range(len(stats.iloc[n, :])):
+        if stats.iloc[n[y], 4][0:2] in dict1:
+            dict1[stats.iloc[n[y], 4][0:2]] += 1
+        else:
+            dict1.update({stats.iloc[n[y], 4][0:2]: 1})
+
+    sort = sorted(dict1.items())
+    for i in range(len(dict1)):
+        dict2.update({sort[i][0]: sort[i][1]})
+
+    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    plt.xticks(range(len(dict2)), list(dict2.keys()))
+    plt.rcParams.update({'font.size': 22})
+    plt.xlabel("Hour (24hr time)")
+    plt.ylabel("Number of accidents")
+
+    plt.show()
+
+    return plt.plot()
+
 
 #3
 def keywordByTime(sDate, eDate, key):
@@ -93,7 +132,10 @@ def keywordByTime(sDate, eDate, key):
         if re.search(keyword, t, re.IGNORECASE) != None:
             a.append(n[index])
         index += 1
-    grid.main(stats.iloc[a])
+    if len(stats.iloc[a]) == 0:
+        wx.MessageBox("No Data Found","Error")
+    else:
+        grid.main(stats.iloc[a])
 
 #4
 def alcoholType():
@@ -146,13 +188,13 @@ def alcoholWeekday():
     for i in range(len(dict1)):
         dict2.update({sort[i][0]:sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+
     plt.xticks(range(len(dict2)), list(dict2.keys()))
     plt.xlabel("Weekday")
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related incidents by weekday")
+    return plt.bar(range(len(dict2)), list(dict2.values()), align='center')
 
-    plt.show()
 
 #6
 def alcoholYearly():
