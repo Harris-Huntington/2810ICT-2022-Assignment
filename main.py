@@ -5,12 +5,22 @@ import wx.grid as gridlib
 # WX Visuals #
 import data
 
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+
+import numpy
+
+import datetime
 
 
 class WindowGUI(wx.Frame):
     def __init__(self, parent, title):
         wx.Frame.__init__(self, parent, title=title, size=(854,480))
         self.initialise()
+        self.p2 = MatPlotPanel(self)
+
+
 
     def initialise(self):
         self.pnl = wx.Panel(self)
@@ -39,7 +49,7 @@ class WindowGUI(wx.Frame):
          # Adding rows to main cols
         col1.Add(col1B, 1, wx.ALIGN_CENTER, border=400)
         col2.Add(col2A, 1, wx.ALIGN_CENTER)
-        col2.Add(col2B, 1, wx.ALIGN_CENTER)
+        col2.Add(col2B, 1, wx.ALIGN_CENTER, border=400)
 
         col2A.Add(wx.StaticText(self.pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
@@ -111,7 +121,7 @@ class WindowGUI(wx.Frame):
 
             #view graph on how many accidents per hour
             elif self.hourlyR.GetValue() == True:
-                data.accidentByHour(self.startDate.Value, self.endDate.Value)
+                self.p2.drawHourly(data.accidentByHour(self.startDate.Value, self.endDate.Value))
 
             #Keyword search
             elif self.typeR.GetValue() == True:
@@ -119,20 +129,21 @@ class WindowGUI(wx.Frame):
 
             #Weekday analysis
             elif self.weekR.GetValue() == True:
-                data.weekdayAnalysis(self.startDate.Value, self.endDate.Value)
+                #data.weekdayAnalysis(self.startDate.Value, self.endDate.Value)
+                self.p2.drawWeeklyDate(data.weekdayAnalysis(self.startDate.Value, self.endDate.Value))
 
         elif self.alcoholR.GetValue() == True:
             #Weekday analysis of alcohol
             if self.trends.GetValue() == True:
-                data.alcoholWeekday()
+                self.p2.drawAlcoholWeekday(data.alcoholWeekday())
 
             #no of crashes affected by alcohol by type
             elif self.aTypes.GetValue() == True:
-                data.alcoholType()
+                self.p2.drawAlcoholType(data.alcoholType())
 
             #yearly alcohol analysis
             elif self.aYearly.GetValue() == True:
-                data.alcoholYearly()
+                self.p2.drawAlcoholYearly(data.alcoholYearly())
 
         elif self.hourlyR.GetValue() == True:
             data.accidentByHour(self.startDate.Value, self.endDate.Value)
@@ -141,6 +152,63 @@ class WindowGUI(wx.Frame):
         elif self.typeR.GetValue() == True:
             data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
+
+
+
+
+class MatPlotPanel(wx.Panel):
+        def __init__(self, parent):
+             wx.Panel.__init__(self, parent, -1, size=(500,400), pos=(325,25))
+
+
+        def drawHourly(self, dict2):
+            self.figure = Figure(figsize=(5.5,4))
+            self.axes = self.figure.add_subplot(111)
+            self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+            self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+            self.axes.set_xlabel("Hour (24hr time)")
+            self.axes.set_ylabel("Number of accidents")
+            self.canvas = FigureCanvas(self, -1, self.figure)
+
+        def drawWeeklyDate(self, dict2):
+            self.figure = Figure(figsize=(5.5, 4))
+            self.axes = self.figure.add_subplot(111)
+            self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+            self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+            self.axes.set_xlabel("Weekday")
+            self.axes.set_ylabel("Number of accidents")
+            self.canvas = FigureCanvas(self, -1, self.figure)
+
+        def drawAlcoholWeekday(self, dict2):
+            self.figure = Figure(figsize=(5.5, 4))
+            self.axes = self.figure.add_subplot(111)
+            self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+            self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+            self.axes.set_xlabel("Weekday")
+            self.axes.set_ylabel("Number of accidents")
+           # plt.title("Number of Alcohol Related incidents by weekday")
+            self.canvas = FigureCanvas(self, -1, self.figure)
+
+        def drawAlcoholType(self, dict2):
+            self.figure = Figure(figsize=(5.4, 4))
+            self.axes = self.figure.add_subplot(111)
+           # self.axes.rcParams['font.size'] = '5'
+            self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
+            self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
+            #self.axes.title("Number of Alcohol Related incidents by Type")
+            self.axes.set_xlabel("Type of Accident")
+            self.axes.set_ylabel("Number of Accidents")
+            self.canvas = FigureCanvas(self, -1, self.figure)
+
+        def drawAlcoholYearly(self, dict1):
+            self.figure = Figure(figsize=(5.2, 4))
+            self.axes = self.figure.add_subplot(111)
+            self.axes.bar(range(len(dict1)), list(dict1.values()), align='center')
+            self.axes.set_xticks(range(len(dict1)), list(dict1.keys()))
+            self.axes.set_xlabel("Year")
+            self.axes.set_ylabel("Number of accidents")
+            #plt.title("Number of Alcohol Related Accidents by Year")
+            self.canvas = FigureCanvas(self, -1, self.figure)
 
 
 

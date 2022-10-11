@@ -4,7 +4,14 @@ import matplotlib.pyplot as plt
 import datetime
 import grid
 import wx
-import jupyter
+
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+
+import numpy
+
+#import jupyter
+
 
 #1
 def infoByTime(sDate, eDate):
@@ -49,15 +56,20 @@ def accidentByHour(sDate, eDate):
     for i in range(len(dict1)):
         dict2.update({sort[i][0]: sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.rcParams.update({'font.size': 22})
-    plt.xlabel("Hour (24hr time)")
-    plt.ylabel("Number of accidents")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Hour (24hr time)")
+    # plt.ylabel("Number of accidents")
+    #
+    # plt.show()
 
-    plt.show()
+    # figure = Figure()
+    # axes = figure.add_subplot(1111)
+    # canvas =
 
-    return plt.plot()
+    return dict2
+
+
 
 #3
 def keywordByTime(sDate, eDate, key):
@@ -91,7 +103,7 @@ def alcoholType():
 
     n = []
     for x in range(len(stats)):
-        if str(stats.iloc[x,5]) == 'Yes':
+        if str(stats.iloc[x, 5]) == 'Yes':
             n.append(x)
     print(n[0])
 
@@ -106,14 +118,25 @@ def alcoholType():
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
         dict2.update({sort[i][0]: sort[i][1]})
+<<<<<<< HEAD
     plt.rcParams['font.size'] = '5'
     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
     plt.xticks(range(len(dict2)), list(dict2.keys()))
     plt.title("Number of Alcohol Related incidents by Type")
     plt.xlabel("Type of Accident")
     plt.ylabel("Number of Accidents")
+=======
+    # plt.rcParams['font.size'] = '5'
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.title("Number of Alcohol Related incidents by Type")
+    # plt.xlabel("Type of Accident")
+    # plt.ylabel("Number of Accidents")
+    #
+    # plt.show()
+>>>>>>> eddbb6b189d79f61ac9f89a3c9044d451b519c38
 
-    plt.show()
+    return dict2
 
 
 #5
@@ -123,7 +146,7 @@ def alcoholWeekday():
 
     n = []
     for x in range(len(stats)):
-        if str(stats.iloc[x,5]) == 'Yes':
+        if str(stats.iloc[x, 5]) == 'Yes':
             n.append(x)
 
     for y in range(len(n)):
@@ -135,15 +158,25 @@ def alcoholWeekday():
 
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
-        dict2.update({sort[i][0]:sort[i][1]})
+        dict2.update({sort[i][0]: sort[i][1]})
 
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Weekday")
+    # plt.ylabel("Number of accidents")
+    # plt.title("Number of Alcohol Related incidents by weekday")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.show()
 
+<<<<<<< HEAD
     plt.xticks(range(len(dict2)), list(dict2.keys()))
     plt.xlabel("Weekday")
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related incidents by weekday")
     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
     plt.show()
+=======
+    return dict2
+>>>>>>> eddbb6b189d79f61ac9f89a3c9044d451b519c38
 
 
 #6
@@ -173,6 +206,8 @@ def alcoholYearly():
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related Accidents by Year")
     plt.show()
+
+    return dict1
 #7
 def weekdayAnalysis(sDate, eDate):
     startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
@@ -200,12 +235,14 @@ def weekdayAnalysis(sDate, eDate):
     for i in range(len(dict1)):
         dict2.update({sort[i][0]:sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Weekday")
-    plt.ylabel("Number of accidents")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Weekday")
+    # plt.ylabel("Number of accidents")
 
-    plt.show()
+    #plt.show()
+
+    return dict2
 
 
 
