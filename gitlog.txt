@@ -1,3 +1,351 @@
+commit 84e6abdccdf10918c2533c3cf1ca3911e59671df
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 23:32:46 2022 +1000
+
+    code cleaned
+
+commit 745cd6ce86aa6d4e1a1e14180867279c677be274
+Merge: 7f683ac eddbb6b
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 23:17:28 2022 +1000
+
+    Finished user manual and Executive summary
+
+commit 7f683ace4663d5daa4ece95538dab654bd80508a
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 23:16:37 2022 +1000
+
+    Finished user manual and Executive summary
+
+commit eddbb6b189d79f61ac9f89a3c9044d451b519c38
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 23:11:26 2022 +1000
+
+    Graphs done
+
+commit 2eb2a67a967b134cba3b920d5f534ad457fa136b
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 22:34:05 2022 +1000
+
+    drawHourly scaled
+
+commit 4fbbaab5bb9079df9f84a3929073366c37a69bb7
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 22:14:05 2022 +1000
+
+    hourly display location correct
+
+commit 2714c4921d5c49d1c133d5e23c3876477e40dcd2
+Merge: c7817d4 702c94e
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 21:40:08 2022 +1000
+
+    visuals progression
+
+commit c7817d47fef0841bfabeaad6df05e2fa6da16861
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 21:37:52 2022 +1000
+
+    visuals progression
+
+commit 702c94e777089ac9e832ea6b1c864b03385f3fab
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 21:36:56 2022 +1000
+
+    User manual and Executive summary
+
+commit 39c1d8e66caf01c56b871a6d9ffd8462bf7924fb
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 20:02:05 2022 +1000
+
+    displaying graphs - in progress
+
+commit 215a026c512788a3236210c3c9078764713b020f
+Merge: 5fc6c89 aa67ca5
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 18:44:22 2022 +1000
+
+    started executive summary
+
+commit 5fc6c89de0267f314694840ec526fdb667cee7fd
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 18:44:07 2022 +1000
+
+    started executive summary
+
+commit aa67ca53851933f2811e4b9b2a1135c15e60a441
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 18:42:07 2022 +1000
+
+    testing essentially done
+
+commit 0fa3723e1df2a5831832713753fc68c89560ce2d
+Merge: 9bc255e aa7288b
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 17:25:35 2022 +1000
+
+    merge
+
+commit 9bc255e3390b668678d193912684ec0acabc5685
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 17:24:47 2022 +1000
+
+    commit for merge
+
+commit aa7288b15e9f49ddcfb290a2ad6cfeaa3f6606ad
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 16:22:48 2022 +1000
+
+    added yearly and weekday alcohol analysis
+
+commit 9553641e69217a992dae69d498a9957e23012fd1
+Merge: 0aa2768 1456027
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 14:59:52 2022 +1000
+
+    merge attempt
+
+commit 0aa2768cf36a0c8237a78086d031a416120e76d1
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Tue Oct 11 14:55:03 2022 +1000
+
+    merge attempt
+
+commit 1456027af31c04309af5ce53726aefbff52d5329
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 13:36:00 2022 +1000
+
+    All template tests in, more docs
+
+commit 09dfa20c62ee5f1851e55c84ad4b67eae9687744
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Tue Oct 11 00:16:46 2022 +1000
+
+    update unit test and acceptance testing documentation
+
+commit c45dc5504298cc9d455aab0306676c602ae67d2c
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Mon Oct 10 21:46:50 2022 +1000
+
+    display info in grid
+
+commit eb575518cd7a668b75610f37225f119b09154569
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Mon Oct 10 13:58:52 2022 +1000
+
+    more testing stuff
+
+commit 4ba8b64aab599f0233f71805d3d4dbcb9a7cfc7d
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Oct 9 16:54:40 2022 +1000
+
+    general updates, testing report some tests added
+
+commit 845f7f55134972866d50cca1287116895374f931
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 8 22:45:50 2022 +1000
+
+    doc. updates - gantt stuff
+
+commit ee68a2db8a3797831380a5393212f73a6f6dbd8a
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 8 18:26:27 2022 +1000
+
+    recovered documentation files
+
+commit 2222a714f9250358674163313e9e988829a2b0aa
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Fri Oct 7 01:43:27 2022 +1000
+
+    tweaks
+
+commit 9eac42a3387984ee90eafdd50eebd263b6804db2
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 23:31:07 2022 +1000
+
+    integrated data.py and main.py
+
+commit 8535ec90bb75c3117bb8ef87ed22ef6d865756a8
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 16:11:00 2022 +1000
+
+    requirements 1-3 working with date range
+
+commit 7dbfb1b09aad6b92e87e4b35a66e4311ede6b05f
+Merge: f829b32 0b759e2
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 16:09:20 2022 +1000
+
+    Merge branch 'master' of https://github.com/Harris-uni/2810ICT-2022-Assignment
+
+commit f829b32b11680ce064661f72e998377b1e7ad662
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 16:09:08 2022 +1000
+
+    requirements 1-3 working with date range
+
+commit 0b759e247e963bc8174ecec2f1a85a286a89e5f6
+Merge: 9c2891d 1778aeb
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 15:51:23 2022 +1000
+
+    data merge
+
+commit 9c2891d08e480a105cc6e8bde94bacaa416b5bd4
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 15:50:20 2022 +1000
+
+    fixed radio button grouping and made date filter look clearer
+
+commit 1778aebad8b08a4a3548ddcdfba606d774784726
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 15:47:59 2022 +1000
+
+    date range coded
+
+commit 04a7aee1d87d8e9f4564983e2b0e81e7b9086abc
+Merge: 21b971e 64d6bf6
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 12:56:42 2022 +1000
+
+    updated data.py date range
+
+commit 21b971e74d1c7a9defcceb635de5224c504bb597
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 12:55:28 2022 +1000
+
+    updated data.py date range
+
+commit 64d6bf67eda1656508efe5c018a40a58daa95021
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 12:38:51 2022 +1000
+
+    test.py created and some tests started/working
+
+commit ad80eca7fa8c46662966308cd9c82c0b593e709a
+Merge: d12f309 61800b9
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 11:23:36 2022 +1000
+
+    pull merge
+
+commit 61800b92abe5061e4674ffcced6b58a26243e6da
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 11:20:44 2022 +1000
+
+    data.py updated
+
+commit d12f309cab4337dc5fb6e77f99cda10c8984c86f
+Merge: cf9e948 81a81bd
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 11:18:01 2022 +1000
+
+    pull merge
+
+commit cf9e94852c093964247edbba42b7686857307afc
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Thu Oct 6 11:16:13 2022 +1000
+
+    pull request
+
+commit a85de5bb95e041962202fc6ff0021d2472d0596d
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Thu Oct 6 01:27:53 2022 +1000
+
+    requirements 2 & 3 completed with placeholders
+
+commit 81a81bd90ebdb3f6e94202d9947127371a94f460
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Wed Oct 5 15:40:21 2022 +1000
+
+    updated data.py with 2 Working placeholders
+
+commit d035882d3b592e9b89b9512569d01cb6aa478462
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Sun Oct 2 20:26:16 2022 +1000
+
+    Updated jupyter notebook file
+
+commit 473caeb5b2f92e15d4e61e31adf039deba5497c7
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Sun Oct 2 19:09:40 2022 +1000
+
+    jupyter notebook file created
+
+commit 2b310b2c8f115376cbe670fc0439d19690957284
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Sun Oct 2 17:22:23 2022 +1000
+
+    loaded csv data
+
+commit 95ebf4867fef0ae37ac1ab810ff883bfb84fc07f
+Merge: 11b5448 ec6d299
+Author: EricM <eric.martin@griffithuni.edu.au>
+Date:   Sun Oct 2 17:01:53 2022 +1000
+
+    added data.py
+
+commit ec6d2994c2c293cc2a674512ffab097952f76c69
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sun Oct 2 15:08:42 2022 +1000
+
+    alcohol impacts box interface done
+
+commit 11657e0a93934f58a09bef822e0a08668c49fc18
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 1 23:11:51 2022 +1000
+
+    more layout, dates box interface done
+
+commit 137d9bcea23008bf66d56dee13ca3f8ccfe05ef2
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 1 21:59:50 2022 +1000
+
+    some more formatting and comments
+
+commit 9c09bdd77e6c3099962e79e32385e64dba1b6f72
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 1 19:14:54 2022 +1000
+
+    title and first row buttons, some formatting
+
+commit 6b918cee6b138420789692325882159bff1744e7
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Sat Oct 1 18:09:35 2022 +1000
+
+    create WX Frame
+
+commit d679fcc6879077c75df70b5ccd7c240946948b3f
+Merge: fb70905 8e4c61e
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 30 14:27:04 2022 +1000
+
+    Merge branch 'master' of https://github.com/Harris-uni/2810ICT-2022-Assignment
+
+commit fb709059496a0480fbf1348da238990fa4104ef2
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 30 14:03:00 2022 +1000
+
+    main.py created
+
+commit 86becf371ef21b1f9d18313b82f635d9ea281c29
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 30 14:02:38 2022 +1000
+
+    main.py created
+
+commit d3d82d48b7b733b3578ea0e79208d7259bb4c390
+Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
+Date:   Fri Sep 30 13:44:39 2022 +1000
+
+    create main
+
+commit 8e4c61e71578c1ef77f3c9f213a4b5a7978bccf2
+Author: MrMartiniii <eric.martin@griffithuni.edu.au>
+Date:   Sun Sep 4 23:41:59 2022 +1000
+
+    actual final
+
 commit ac5c8e63263815d8b5a6d9fa7a4d5b70694a3475
 Author: MrMartiniii <eric.martin@griffithuni.edu.au>
 Date:   Sun Sep 4 23:27:25 2022 +1000
@@ -201,3 +549,156 @@ Author: Harris Huntington <harris.huntington@griffithuni.edu.au>
 Date:   Wed Aug 31 13:47:01 2022 +1000
 
     First Commit
+
+commit 11b54488271bc9c2b06ddc3f719ff149aba4fca7
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Wed Jul 27 10:54:07 2022 +1000
+
+    Update README.md
+
+commit 5daa93dad2d4830a363ad4f57877b44b0cb560e3
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Wed Jul 27 10:53:24 2022 +1000
+
+    Update README.md
+
+commit 86cf23b543f71b570c65b60d34c4a1146ba8724b
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Wed Jul 27 10:28:07 2022 +1000
+
+    Update README.md
+
+commit c9123b152a9aca51d2ae6ef2d3af8a00c0bc669d
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Wed Jul 27 10:26:41 2022 +1000
+
+    Update README.md
+
+commit f359774698d6d704611c8b901b64867231eed8d2
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 20:26:34 2022 +1000
+
+    Update README.md
+
+commit 6cdb3ecdc66eccee03a86aec140b4f4fb9923a6d
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 20:26:02 2022 +1000
+
+    Update README.md
+
+commit b6679a3c8c9abeae7750397e85f19752a3b26392
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 20:24:21 2022 +1000
+
+    Update README.md
+
+commit 4beddf0276319d947318898f5c53b9567ef58f73
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 19:01:26 2022 +1000
+
+    Update README.md
+
+commit 87074fa60b2472680158a4feee3ba544bd41130c
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 19:01:09 2022 +1000
+
+    Update README.md
+
+commit 2d17a94122620b046565ad82214d2f72519dbe6b
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:57:35 2022 +1000
+
+    Update README.md
+
+commit b40add1268efedbce10785445ff957f766ec8f80
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:41:19 2022 +1000
+
+    Update README.md
+
+commit e194912056b986d8d657bab9414df98ff53b652a
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:39:56 2022 +1000
+
+    Update README.md
+
+commit 7f416c98106eebbcafc9a01682563b98999c3085
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:38:55 2022 +1000
+
+    Update README.md
+
+commit b35cf72394a6a734ca8a5f38e04f7abc74c56518
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:38:07 2022 +1000
+
+    Update README.md
+
+commit 09aec85e7c936bf4d50ddeb1e4c53802844bfb60
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:36:56 2022 +1000
+
+    Update README.md
+
+commit b0df61c73bf4c99cb0ac16ac075794c1791437d3
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:36:40 2022 +1000
+
+    Update README.md
+
+commit 2224f19203500d7b2f6ea45467d1d2eed5e9d293
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:35:36 2022 +1000
+
+    Update README.md
+
+commit 413e197f63a6eb9aff7fdef6b4de939b46924150
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:35:13 2022 +1000
+
+    Update README.md
+
+commit 73c66bb897666d80277305a656ce3dd1b8c72aaf
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:34:50 2022 +1000
+
+    Update README.md
+
+commit 70f8ec1071ac68066ed1dd2f33dfcc8cc2d28e2f
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:34:30 2022 +1000
+
+    Updated readme with further instructions
+
+commit 84f0214fc77423ec0fef0f30ad6f232612bc24a3
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Tue Jul 26 18:33:28 2022 +1000
+
+    Added assignment document templates
+    
+    Part A
+    Project Plan
+    Gannt Chart
+    Software Design Document
+    
+    Part B
+    Executive Summary
+    Software Testing Report
+
+commit 4e3637ae57fa96f67a734cb565ee30f7f0570279
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Mon Jul 25 12:48:19 2022 +1000
+
+    Update README.md
+
+commit 020fb3b1fb35b640b8817112dd07ebfc910829ab
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Mon Jul 25 12:47:19 2022 +1000
+
+    Update README.md
+
+commit 71986bf5edc5aa8bdd1070fe070a9fa179607638
+Author: Gervase <g.tuxworth@griffith.edu.au>
+Date:   Mon Jul 25 12:37:54 2022 +1000
+
+    Initial commit
