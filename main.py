@@ -42,9 +42,6 @@ class WindowGUI(wx.Frame):
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
 
         self.infoCol = wx.BoxSizer(wx.HORIZONTAL)
-        #myGrid = gridlib.Grid(self)
-        #myGrid.CreateGrid(12, 30)
-        #self.infoCol.Add(myGrid, 1, wx.EXPAND)
         rows.Add(self.infoCol, 1, wx.ALIGN_LEFT)
 
 
@@ -65,7 +62,7 @@ class WindowGUI(wx.Frame):
         self.allR = wx.RadioButton(self.pnl, 1, 'All', (filterx,filtery),style=wx.RB_GROUP) #Filter Checkboxes
         self.hourlyR = wx.RadioButton(self.pnl, 1, 'Hourly', (2*filterx - 10, filtery))
         self.typeR = wx.RadioButton(self.pnl, 1, 'Type', (70, 160))
-        self.otherR = wx.RadioButton(self.pnl, 1, 'Other', (3*filterx, filtery))
+        self.weekR = wx.RadioButton(self.pnl, 1, 'Weekday', (3*filterx, filtery))
 
         self.keyword = wx.TextCtrl(self.pnl, pos=(120, 160), size=(140, 20))  # Keyword Search
         self.keyword.SetHint('Keyword')
@@ -97,15 +94,24 @@ class WindowGUI(wx.Frame):
         self.Show(True)
 
     def search(self, event):
-        if self.allR.GetValue() == True:
-            data.infoByTime(self.startDate.Value, self.endDate.Value)
+        if self.datesR.GetValue() == True:
+            #Get info of accidents between 2 dates
+            if self.allR.GetValue() == True:
+                data.infoByTime(self.startDate.Value, self.endDate.Value)
 
+            #view graph on how many accidents per hour
+            elif self.hourlyR.GetValue() == True:
+                data.accidentByHour(self.startDate.Value, self.endDate.Value)
 
+            #Keyword search
+            elif self.typeR.GetValue() == True:
+                data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
-        elif self.hourlyR.GetValue() == True:
-            data.accidentByHour(self.startDate.Value, self.endDate.Value)
-        elif self.typeR.GetValue() == True:
-            data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
+            elif self.weekR.GetValue() == True:
+                data.weekdayAnalysis(self.startDate.Value, self.endDate.Value)
+
+        elif self.alcoholR.GetValue() == True:
+            print('hi')
 
         print(self.startDate.Value, self.endDate.Value)
 
