@@ -20,7 +20,7 @@ class dataTest(unittest.TestCase):
     #     self.assertIn("3", data.accidentByHour()) # Test accidentByHour loads data
 
     # def test_keywordByTime(self): #2.4
-    #     self.assertIn("3", data.keywordByTime()) # Test keywordByTime loads data
+    #     self.assertIn("3", data. keywordByTime()) # Test keywordByTime loads data
 
     # def test_weekdayAnalysis(self): #2.5
     #     self.assertIn("3", data.weekdayAnalysis()) # Test weekdayAnalysis loads data

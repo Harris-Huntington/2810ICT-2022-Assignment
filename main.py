@@ -32,11 +32,13 @@ class WindowGUI(wx.Frame):
 
         col1B = wx.BoxSizer(wx.HORIZONTAL)
         col2A = wx.BoxSizer(wx.HORIZONTAL)
+        col2B = wx.BoxSizer(wx.HORIZONTAL)
 
 
          # Adding rows to main cols
         col1.Add(col1B, 1, wx.ALIGN_CENTER, border=400)
         col2.Add(col2A, 1, wx.ALIGN_CENTER)
+        col2.Add(col2B, 1, wx.ALIGN_CENTER)
 
         col2A.Add(wx.StaticText(self.pnl, 1, label="Victoria State Accident Dataset Analysis"), 1) #Title
         rows.Add(splitCol, 1, wx.ALIGN_CENTER)
@@ -96,6 +98,13 @@ class WindowGUI(wx.Frame):
         self.pnl.SetSizer(rows)
         self.Show(True)
 
+
+        #Col 2 - Data Display
+        col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
+        col2B.Add(self.search(self))
+
+
+
     def search(self, event):
         if self.allR.GetValue() == True:
             data.infoByTime(self.startDate.Value, self.endDate.Value)
@@ -104,6 +113,7 @@ class WindowGUI(wx.Frame):
 
         elif self.hourlyR.GetValue() == True:
             data.accidentByHour(self.startDate.Value, self.endDate.Value)
+         #   self.pnl.data.accidentByHour(self.startDate.Value, self.endDate.Value)
         elif self.typeR.GetValue() == True:
             data.keywordByTime(self.startDate.Value, self.endDate.Value, self.keyword.Value)
 
