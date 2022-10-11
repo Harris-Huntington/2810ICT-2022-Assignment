@@ -97,7 +97,7 @@ class WindowGUI(wx.Frame):
 
         #Col 2 - Data Display
         col2B.Add(wx.StaticText(self.pnl, 1, label="Hello World"), 1) #Title
-        col2B.Add(self.search(self))
+        #col2B.Add(self.search(self))
 
 
 
