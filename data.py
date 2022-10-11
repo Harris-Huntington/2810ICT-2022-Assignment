@@ -33,54 +33,9 @@ def infoByTime(sDate, eDate):
 
 #2
 
-# def accidentByHour(sDate, eDate):
-#     startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
-#     endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
-#
-#     dict1 = {}
-#     dict2 = {}
-#     n = []
-#
-#     for x in range(len(stats)):
-#         newdata = stats.iloc[x, 3]
-#         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
-#             n.append(x)
-#
-#     for y in range(len(stats.iloc[n, :])):
-#         if stats.iloc[n[y], 4][0:2] in dict1:
-#             dict1[stats.iloc[n[y], 4][0:2]] += 1
-#         else:
-#             dict1.update({stats.iloc[n[y], 4][0:2]: 1})
-#
-#     sort = sorted(dict1.items())
-#     for i in range(len(dict1)):
-#         dict2.update({sort[i][0]: sort[i][1]})
-#
-#     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-#     plt.xticks(range(len(dict2)), list(dict2.keys()))
-#     plt.xlabel("Hour (24hr time)")
-#     plt.ylabel("Number of accidents")
-#
-#     plt.show()
-#
-#     # figure = Figure()
-#     # axes = figure.add_subplot(1111)
-#     # canvas =
-#
-#     return dict1, dict2
-
-
-    # class MatPlotPanel(wx.Panel):
-    #     def __init__(self, parent):
-    #         wx.Panel.__init__(self, parent, -1, size=(450, 350), pos=(350, 50))
-    #
-    #         self.figure = Figure()
-    #         self.axes = self.figure.add_subplot(111)
-    #         t = numpy.arange(0.0, 10, 1.0)
-    #         s = [0, 1, 0, 1, 0, 2, 1, 2, 1, 0]
-    #         self.y_max = 1.0
-    #         self.axes.plot(t, s)
-    #         self.canvas = FigureCanvas(self, -1, self.figure)
+def accidentByHour(sDate, eDate):
+    startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
+    endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
 
     dict1 = {}
     dict2 = {}
@@ -101,15 +56,19 @@ def infoByTime(sDate, eDate):
     for i in range(len(dict1)):
         dict2.update({sort[i][0]: sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.rcParams.update({'font.size': 22})
-    plt.xlabel("Hour (24hr time)")
-    plt.ylabel("Number of accidents")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Hour (24hr time)")
+    # plt.ylabel("Number of accidents")
+    #
+    # plt.show()
 
-    plt.show()
+    # figure = Figure()
+    # axes = figure.add_subplot(1111)
+    # canvas =
 
-    return plt.plot()
+    return dict2
+
 
 
 #3
@@ -144,27 +103,31 @@ def alcoholType():
 
     n = []
     for x in range(len(stats)):
-        if str(stats.iloc[x,5]) == 'Yes':
+        if str(stats.iloc[x, 5]) == 'Yes':
             n.append(x)
     print(n[0])
 
     for y in range(len(n)):
-        print(y)
         if stats.iloc[n[y], 6] in dict1:
             dict1[stats.iloc[n[y], 6]] += 1
+        elif stats.iloc[n[y], 6] == "Other accident":
+            pass
         else:
             dict1.update({stats.iloc[n[y], 6]: 1})
 
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
         dict2.update({sort[i][0]: sort[i][1]})
-    plt.rcParams['font.size'] = '5'
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Type of Accident",)
-    plt.ylabel("Number of Accidents")
+    # plt.rcParams['font.size'] = '5'
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.title("Number of Alcohol Related incidents by Type")
+    # plt.xlabel("Type of Accident")
+    # plt.ylabel("Number of Accidents")
+    #
+    # plt.show()
 
-    plt.draw()
+    return dict2
 
 
 #5
@@ -174,7 +137,7 @@ def alcoholWeekday():
 
     n = []
     for x in range(len(stats)):
-        if str(stats.iloc[x,5]) == 'Yes':
+        if str(stats.iloc[x, 5]) == 'Yes':
             n.append(x)
 
     for y in range(len(n)):
@@ -186,14 +149,16 @@ def alcoholWeekday():
 
     sort = sorted(dict1.items())
     for i in range(len(dict1)):
-        dict2.update({sort[i][0]:sort[i][1]})
+        dict2.update({sort[i][0]: sort[i][1]})
 
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Weekday")
+    # plt.ylabel("Number of accidents")
+    # plt.title("Number of Alcohol Related incidents by weekday")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.show()
 
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Weekday")
-    plt.ylabel("Number of accidents")
-    plt.title("Number of Alcohol Related incidents by weekday")
-    return plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    return dict2
 
 
 #6
@@ -223,6 +188,8 @@ def alcoholYearly():
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related Accidents by Year")
     plt.show()
+
+    return dict1
 #7
 def weekdayAnalysis(sDate, eDate):
     startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
@@ -250,12 +217,14 @@ def weekdayAnalysis(sDate, eDate):
     for i in range(len(dict1)):
         dict2.update({sort[i][0]:sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
-    plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Weekday")
-    plt.ylabel("Number of accidents")
+    # plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    # plt.xticks(range(len(dict2)), list(dict2.keys()))
+    # plt.xlabel("Weekday")
+    # plt.ylabel("Number of accidents")
 
-    plt.show()
+    #plt.show()
+
+    return dict2
 
 
 
