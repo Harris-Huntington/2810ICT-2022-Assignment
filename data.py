@@ -3,6 +3,8 @@ import re
 import matplotlib.pyplot as plt
 import datetime
 import grid
+import wx
+import jupyter
 
 #1
 def infoByTime(sDate, eDate):
@@ -14,7 +16,11 @@ def infoByTime(sDate, eDate):
         newdata = stats.iloc[x, 3]
         if startDate <= datetime.datetime.strptime(newdata, '%d/%m/%Y') <= endDate:
             n.append(x)
-    grid.main(stats.iloc[n])
+
+    if len(stats.iloc[n]) == 0:
+        wx.MessageBox("No Data Found","Error")
+    else:
+        grid.main(stats.iloc[n])
 
 
 
@@ -45,6 +51,7 @@ def accidentByHour(sDate, eDate):
 
     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
     plt.xticks(range(len(dict2)), list(dict2.keys()))
+    plt.rcParams.update({'font.size': 22})
     plt.xlabel("Hour (24hr time)")
     plt.ylabel("Number of accidents")
 
@@ -72,7 +79,10 @@ def keywordByTime(sDate, eDate, key):
         if re.search(keyword, t, re.IGNORECASE) != None:
             a.append(n[index])
         index += 1
-    grid.main(stats.iloc[a])
+    if len(stats.iloc[a]) == 0:
+        wx.MessageBox("No Data Found","Error")
+    else:
+        grid.main(stats.iloc[a])
 
 #4
 def alcoholType():
@@ -125,13 +135,13 @@ def alcoholWeekday():
     for i in range(len(dict1)):
         dict2.update({sort[i][0]:sort[i][1]})
 
-    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+
     plt.xticks(range(len(dict2)), list(dict2.keys()))
     plt.xlabel("Weekday")
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related incidents by weekday")
+    return plt.bar(range(len(dict2)), list(dict2.values()), align='center')
 
-    plt.show()
 
 #6
 def alcoholYearly():

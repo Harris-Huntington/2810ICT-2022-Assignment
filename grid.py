@@ -3,18 +3,18 @@ from wx import EVT_CLOSE
 import wx.grid as gridlib
 import pandas as pd
 
-EVEN_ROW_COLOUR = '#CCE6FF'
-GRID_LINE_COLOUR = '#ccc'
+EVEN_ROW_COLOUR = '#d3d3d3'
+GRID_LINE_COLOUR = '#000000'
 
 class PandasTable(wx.Frame):
     def __init__(self, parent, title, df):
         super(PandasTable, self).__init__(parent, title=title)
-        panel = wx.Panel(self, -1)
+        pnl = wx.Panel(self, -1)
         self.data = df
-        grid = self.create_grid(panel, self.data)
+        grid = self.create_grid(pnl, self.data)
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(grid, 1, wx.ALL|wx.EXPAND)
-        panel.SetSizer(sizer)
+        pnl.SetSizer(sizer)
 
         # Bind Close Event
         self.Bind(EVT_CLOSE, self.exit)
