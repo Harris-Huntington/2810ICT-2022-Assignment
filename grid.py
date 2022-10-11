@@ -81,12 +81,12 @@ def display(df):
     frame = PandasTable(None, 'Requested Info', df)
     app.MainLoop()
 
-def main():
+def main(input):
     import numpy as np
-    #df =
+    df = input
 
-    df = pd.DataFrame({'a' : np.random.randn(10), 'b' : np.random.randn(10), 'c' : np.random.randn(10)})
-    print(df)
+    #df = pd.DataFrame({'a' : np.random.randn(10), 'b' : np.random.randn(10), 'c' : np.random.randn(10)})
+    #print(df)
     display(df)
 
 if __name__ == '__main__':
