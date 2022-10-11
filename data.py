@@ -50,6 +50,7 @@ def accidentByHour(sDate, eDate):
 
     plt.show()
 
+    return plt.plot()
 
 #3
 def keywordByTime(sDate, eDate, key):
