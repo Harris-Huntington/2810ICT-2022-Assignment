@@ -77,10 +77,9 @@ class WindowGUI(wx.Frame):
         # wx.RadioButton(pnl, 1, 'Other1', (alcX, alcY + 50))
         # wx.RadioButton(pnl, 1, 'Other2', (alcX + 100, alcY + 50))
 
-        wx.RadioButton(self.pnl, 1, 'Trends', (alcX, alcY), style=wx.RB_GROUP)  # Filter Checkboxes
-        wx.RadioButton(self.pnl, 1, 'Types', (alcX + 100, alcY))
-        wx.RadioButton(self.pnl, 1, 'Other1', (alcX, alcY + 50))
-        wx.RadioButton(self.pnl, 1, 'Other2', (alcX + 100, alcY + 50))
+        self.trends = wx.RadioButton(self.pnl, 1, 'Trends', (alcX, alcY), style=wx.RB_GROUP)  # Filter Checkboxes
+        self.aTypes = wx.RadioButton(self.pnl, 1, 'Types', (alcX + 100, alcY))
+        self.aYearly = wx.RadioButton(self.pnl, 1, 'Yearly', (alcX + 50, alcY+50))
 
 
 
@@ -111,7 +110,13 @@ class WindowGUI(wx.Frame):
                 data.weekdayAnalysis(self.startDate.Value, self.endDate.Value)
 
         elif self.alcoholR.GetValue() == True:
-            print('hi')
+            if self.trends.GetValue() == True:
+                data.alcoholWeekday()
+            elif self.aTypes.GetValue() == True:
+                data.alcoholType()
+            elif self.aYearly.GetValue() == True:
+                data.alcoholYearly()
+
 
         print(self.startDate.Value, self.endDate.Value)
 
