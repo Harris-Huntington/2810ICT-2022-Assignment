@@ -216,7 +216,7 @@ class WindowGUI(wx.Frame):
 
 class MatPlotPanel(wx.Panel):
         def __init__(self, parent):
-             wx.Panel.__init__(self, parent, -1, size=(450,350), pos=(350,50))
+             wx.Panel.__init__(self, parent, -1, size=(500,400), pos=(325,25))
 
             # self.figure = Figure()
             # self.axes = self.figure.add_subplot(111)
@@ -236,13 +236,12 @@ class MatPlotPanel(wx.Panel):
 
         def drawHourly(self, dict2):
             print(dict2)
-            self.figure = Figure()
+            self.figure = Figure(figsize=(5.5,4))
             self.axes = self.figure.add_subplot(111)
             self.axes.bar(range(len(dict2)), list(dict2.values()), align='center')
             self.axes.set_xticks(range(len(dict2)), list(dict2.keys()))
             self.axes.set_xlabel("Hour (24hr time)")
             self.axes.set_ylabel("Number of accidents")
-            self.axes.set_autoscale_on(True)
             self.canvas = FigureCanvas(self, -1, self.figure)
 
 
