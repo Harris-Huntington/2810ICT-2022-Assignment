@@ -96,9 +96,10 @@ def alcoholType():
     print(n[0])
 
     for y in range(len(n)):
-        print(y)
         if stats.iloc[n[y], 6] in dict1:
             dict1[stats.iloc[n[y], 6]] += 1
+        elif stats.iloc[n[y], 6] == "Other accident":
+            pass
         else:
             dict1.update({stats.iloc[n[y], 6]: 1})
 
@@ -108,7 +109,8 @@ def alcoholType():
     plt.rcParams['font.size'] = '5'
     plt.bar(range(len(dict2)), list(dict2.values()), align='center')
     plt.xticks(range(len(dict2)), list(dict2.keys()))
-    plt.xlabel("Type of Accident",)
+    plt.title("Number of Alcohol Related incidents by Type")
+    plt.xlabel("Type of Accident")
     plt.ylabel("Number of Accidents")
 
     plt.show()
@@ -140,7 +142,8 @@ def alcoholWeekday():
     plt.xlabel("Weekday")
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related incidents by weekday")
-    return plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    plt.bar(range(len(dict2)), list(dict2.values()), align='center')
+    plt.show()
 
 
 #6
@@ -163,17 +166,17 @@ def alcoholYearly():
             dict1['2018'] +=1
         index += 1
 
-
     plt.bar(range(len(dict1)), list(dict1.values()), align='center')
     plt.xticks(range(len(dict1)), list(dict1.keys()))
     plt.xlabel("Year")
+    plt.rcParams['font.size'] = '10'
     plt.ylabel("Number of accidents")
     plt.title("Number of Alcohol Related Accidents by Year")
     plt.show()
 #7
 def weekdayAnalysis(sDate, eDate):
-    startDate = datetime.datetime.strptime('04/07/2013', '%d/%m/%Y')
-    endDate = datetime.datetime.strptime('19/07/2013', '%d/%m/%Y')
+    startDate = datetime.datetime.strptime(sDate, '%d/%m/%Y')
+    endDate = datetime.datetime.strptime(eDate, '%d/%m/%Y')
 
     n = []
     for x in range(len(stats)):
